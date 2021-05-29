@@ -1,18 +1,11 @@
-import {
-  Container,
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 
 import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => {
   return (
     <header>
-      <Navbar bg="light" color="light" light expand="md">
+      <Navbar bg="light" color="light" expand="md">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
