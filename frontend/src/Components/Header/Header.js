@@ -14,7 +14,12 @@ const Header = () => {
             </Navbar.Brand>
           </LinkContainer>
 
-          <Nav className="mr-auto" navbar>
+          <Nav navbar>
+            <Nav.Item>
+              <LinkContainer to="/cart">
+                <Nav.Link>Cart</Nav.Link>
+              </LinkContainer>
+            </Nav.Item>
             <Nav.Item>
               <Nav.Link href="https://github.com/pooyadhgh/React-Redux-Store">
                 GitHub

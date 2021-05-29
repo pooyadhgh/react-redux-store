@@ -1,23 +1,36 @@
-import { Link } from 'react-router-dom';
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Link, useHistory } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
 
 const Product = ({ product }) => {
+  const history = useHistory();
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${product._id}`);
+  };
+
   return (
     <Card className="my-3 p-3 rounded">
       <Link to={`/product/${product._id}`}>
-        <CardImg src={product.image} variant="top" />
+        <Card.Img src={product.image} variant="top" />
       </Link>
-      <CardBody>
+      <Card.Body>
         <Link to={`/product/${product._id}`}>
-          <CardTitle as="div" className="text-center">
+          <Card.Title as="div" className="text-center">
             {product.name}
-          </CardTitle>
+          </Card.Title>
         </Link>
-      </CardBody>
-
-      <CardText as="h3" className="text-center">
+      </Card.Body>
+      <Card.Text as="h3" className="text-center">
         $ {product.price}
-      </CardText>
+      </Card.Text>
+      <Button
+        onClick={addToCartHandler}
+        size="lg"
+        className="btn-block text-center"
+        type="button"
+      >
+        Add To Cart
+      </Button>
     </Card>
   );
 };
